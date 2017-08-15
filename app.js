@@ -2,16 +2,23 @@
 
 angular.module('MyNewApp', [])
 
-.controller('AppController', AppController)
+.controller('AppController', ['$scope', '$filter', function($scope, $filter){
 
-function AppController($scope, $filter){
-	$scope.name = "";
+$scope.name = "";
 
-	$scope.myFilter = function(){
+		$scope.myFilter = function(){
 		var upCase = $filter('uppercase');
 		$scope.name = upCase($scope.name);
 	};
-}
+}]);
 
+// function AppController($scope, $filter){
+// 	$scope.name = "";
+
+// 	$scope.myFilter = function(){
+// 		var upCase = $filter('uppercase');
+// 		$scope.name = upCase($scope.name);
+// 	};
+// }
 
 })();
